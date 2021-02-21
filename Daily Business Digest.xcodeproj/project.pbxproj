@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AC03E656AF10EFE6C756DA0 /* Pods_Daily_Business_Digest_Daily_Business_DigestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68EC6711B5BE4A32B6057B5F /* Pods_Daily_Business_Digest_Daily_Business_DigestUITests.framework */; };
+		5AB8E6D5D1F85DDD0638C278 /* Pods_Daily_Business_Digest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D090CB45C8B6DACCE37743A4 /* Pods_Daily_Business_Digest.framework */; };
+		9EBB8E1E1EFA476240821941 /* Pods_Daily_Business_DigestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2EEBD9872C0BBF354B2A6 /* Pods_Daily_Business_DigestTests.framework */; };
 		A81F897325E1DD2A000A7CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F897225E1DD2A000A7CBD /* AppDelegate.swift */; };
 		A81F897525E1DD2A000A7CBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F897425E1DD2A000A7CBD /* SceneDelegate.swift */; };
 		A81F897725E1DD2A000A7CBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F897625E1DD2A000A7CBD /* ViewController.swift */; };
@@ -35,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24F2EEBD9872C0BBF354B2A6 /* Pods_Daily_Business_DigestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daily_Business_DigestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EF3BC40EF3CFB2D43507ED0 /* Pods-Daily Business Digest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily Business Digest.debug.xcconfig"; path = "Target Support Files/Pods-Daily Business Digest/Pods-Daily Business Digest.debug.xcconfig"; sourceTree = "<group>"; };
+		68EC6711B5BE4A32B6057B5F /* Pods_Daily_Business_Digest_Daily_Business_DigestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daily_Business_Digest_Daily_Business_DigestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97630A8648175F87E8F0DC15 /* Pods-Daily Business DigestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily Business DigestTests.release.xcconfig"; path = "Target Support Files/Pods-Daily Business DigestTests/Pods-Daily Business DigestTests.release.xcconfig"; sourceTree = "<group>"; };
+		A4BBBEB68595AA6B7E1B4C6D /* Pods-Daily Business DigestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily Business DigestTests.debug.xcconfig"; path = "Target Support Files/Pods-Daily Business DigestTests/Pods-Daily Business DigestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A81F896F25E1DD2A000A7CBD /* Daily Business Digest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Business Digest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A81F897225E1DD2A000A7CBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A81F897425E1DD2A000A7CBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +57,10 @@
 		A81F899025E1DD2D000A7CBD /* Daily Business DigestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily Business DigestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A81F899425E1DD2D000A7CBD /* Daily_Business_DigestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_Business_DigestUITests.swift; sourceTree = "<group>"; };
 		A81F899625E1DD2D000A7CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2492BAD4A69FA2162603616 /* Pods-Daily Business Digest-Daily Business DigestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily Business Digest-Daily Business DigestUITests.release.xcconfig"; path = "Target Support Files/Pods-Daily Business Digest-Daily Business DigestUITests/Pods-Daily Business Digest-Daily Business DigestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C4450719B16AA7A6AF20F196 /* Pods-Daily Business Digest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily Business Digest.release.xcconfig"; path = "Target Support Files/Pods-Daily Business Digest/Pods-Daily Business Digest.release.xcconfig"; sourceTree = "<group>"; };
+		C9F3F16F4D50A8D62EDCC93D /* Pods-Daily Business Digest-Daily Business DigestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily Business Digest-Daily Business DigestUITests.debug.xcconfig"; path = "Target Support Files/Pods-Daily Business Digest-Daily Business DigestUITests/Pods-Daily Business Digest-Daily Business DigestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D090CB45C8B6DACCE37743A4 /* Pods_Daily_Business_Digest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daily_Business_Digest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB8E6D5D1F85DDD0638C278 /* Pods_Daily_Business_Digest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EBB8E1E1EFA476240821941 /* Pods_Daily_Business_DigestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AC03E656AF10EFE6C756DA0 /* Pods_Daily_Business_Digest_Daily_Business_DigestUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		078D257C487D8D829927F011 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EF3BC40EF3CFB2D43507ED0 /* Pods-Daily Business Digest.debug.xcconfig */,
+				C4450719B16AA7A6AF20F196 /* Pods-Daily Business Digest.release.xcconfig */,
+				C9F3F16F4D50A8D62EDCC93D /* Pods-Daily Business Digest-Daily Business DigestUITests.debug.xcconfig */,
+				B2492BAD4A69FA2162603616 /* Pods-Daily Business Digest-Daily Business DigestUITests.release.xcconfig */,
+				A4BBBEB68595AA6B7E1B4C6D /* Pods-Daily Business DigestTests.debug.xcconfig */,
+				97630A8648175F87E8F0DC15 /* Pods-Daily Business DigestTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A81F896625E1DD2A000A7CBD = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +112,8 @@
 				A81F898825E1DD2D000A7CBD /* Daily Business DigestTests */,
 				A81F899325E1DD2D000A7CBD /* Daily Business DigestUITests */,
 				A81F897025E1DD2A000A7CBD /* Products */,
+				078D257C487D8D829927F011 /* Pods */,
+				E3527FE84D42260614561C1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +159,16 @@
 			path = "Daily Business DigestUITests";
 			sourceTree = "<group>";
 		};
+		E3527FE84D42260614561C1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D090CB45C8B6DACCE37743A4 /* Pods_Daily_Business_Digest.framework */,
+				68EC6711B5BE4A32B6057B5F /* Pods_Daily_Business_Digest_Daily_Business_DigestUITests.framework */,
+				24F2EEBD9872C0BBF354B2A6 /* Pods_Daily_Business_DigestTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A81F899925E1DD2D000A7CBD /* Build configuration list for PBXNativeTarget "Daily Business Digest" */;
 			buildPhases = (
+				2852370A67FD5B97DCCB5729 /* [CP] Check Pods Manifest.lock */,
 				A81F896B25E1DD2A000A7CBD /* Sources */,
 				A81F896C25E1DD2A000A7CBD /* Frameworks */,
 				A81F896D25E1DD2A000A7CBD /* Resources */,
+				094373A541435072BE1B5965 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A81F899C25E1DD2D000A7CBD /* Build configuration list for PBXNativeTarget "Daily Business DigestTests" */;
 			buildPhases = (
+				486741B9B828772866D8456E /* [CP] Check Pods Manifest.lock */,
 				A81F898125E1DD2D000A7CBD /* Sources */,
 				A81F898225E1DD2D000A7CBD /* Frameworks */,
 				A81F898325E1DD2D000A7CBD /* Resources */,
@@ -170,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A81F899F25E1DD2D000A7CBD /* Build configuration list for PBXNativeTarget "Daily Business DigestUITests" */;
 			buildPhases = (
+				C776151C140B10405E166C71 /* [CP] Check Pods Manifest.lock */,
 				A81F898C25E1DD2D000A7CBD /* Sources */,
 				A81F898D25E1DD2D000A7CBD /* Frameworks */,
 				A81F898E25E1DD2D000A7CBD /* Resources */,
+				70A0FB3BB39ECA7B787CA370 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		094373A541435072BE1B5965 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daily Business Digest/Pods-Daily Business Digest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daily Business Digest/Pods-Daily Business Digest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Daily Business Digest/Pods-Daily Business Digest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2852370A67FD5B97DCCB5729 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Daily Business Digest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		486741B9B828772866D8456E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Daily Business DigestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70A0FB3BB39ECA7B787CA370 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daily Business Digest-Daily Business DigestUITests/Pods-Daily Business Digest-Daily Business DigestUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daily Business Digest-Daily Business DigestUITests/Pods-Daily Business Digest-Daily Business DigestUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Daily Business Digest-Daily Business DigestUITests/Pods-Daily Business Digest-Daily Business DigestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C776151C140B10405E166C71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Daily Business Digest-Daily Business DigestUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A81F896B25E1DD2A000A7CBD /* Sources */ = {
@@ -433,6 +582,7 @@
 		};
 		A81F899A25E1DD2D000A7CBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EF3BC40EF3CFB2D43507ED0 /* Pods-Daily Business Digest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +602,7 @@
 		};
 		A81F899B25E1DD2D000A7CBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4450719B16AA7A6AF20F196 /* Pods-Daily Business Digest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +622,7 @@
 		};
 		A81F899D25E1DD2D000A7CBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4BBBEB68595AA6B7E1B4C6D /* Pods-Daily Business DigestTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +645,7 @@
 		};
 		A81F899E25E1DD2D000A7CBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97630A8648175F87E8F0DC15 /* Pods-Daily Business DigestTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +668,7 @@
 		};
 		A81F89A025E1DD2D000A7CBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9F3F16F4D50A8D62EDCC93D /* Pods-Daily Business Digest-Daily Business DigestUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +689,7 @@
 		};
 		A81F89A125E1DD2D000A7CBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2492BAD4A69FA2162603616 /* Pods-Daily Business Digest-Daily Business DigestUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

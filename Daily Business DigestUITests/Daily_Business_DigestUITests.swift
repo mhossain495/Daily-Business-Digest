@@ -2,7 +2,7 @@
 //  Daily_Business_DigestUITests.swift
 //  Daily Business DigestUITests
 //
-//  Created by shanaaz begum on 2/20/21.
+//  Created by Mohammed Hossain on 2/20/21.
 //
 
 import XCTest

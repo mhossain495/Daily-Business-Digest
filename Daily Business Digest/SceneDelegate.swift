@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Daily Business Digest
 //
-//  Created by shanaaz begum on 2/20/21.
+//  Created by Mohammed Hossain on 2/20/21.
 //
 
 import UIKit
