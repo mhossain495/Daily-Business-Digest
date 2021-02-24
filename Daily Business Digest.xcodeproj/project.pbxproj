@@ -133,9 +133,9 @@
 			children = (
 				A81F897225E1DD2A000A7CBD /* AppDelegate.swift */,
 				A81F897425E1DD2A000A7CBD /* SceneDelegate.swift */,
-				A81F897625E1DD2A000A7CBD /* ViewController.swift */,
-				A81F897825E1DD2A000A7CBD /* Main.storyboard */,
-				A82A5B0625E46596004811A5 /* NewsTableViewController.swift */,
+				A82A5B1725E5E461004811A5 /* Model */,
+				A82A5B1625E5E451004811A5 /* View */,
+				A82A5B1825E5E46E004811A5 /* Controller */,
 				A81F897B25E1DD2D000A7CBD /* Assets.xcassets */,
 				A81F897D25E1DD2D000A7CBD /* LaunchScreen.storyboard */,
 				A81F898025E1DD2D000A7CBD /* Info.plist */,
@@ -159,6 +159,30 @@
 				A81F899625E1DD2D000A7CBD /* Info.plist */,
 			);
 			path = "Daily Business DigestUITests";
+			sourceTree = "<group>";
+		};
+		A82A5B1625E5E451004811A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A81F897825E1DD2A000A7CBD /* Main.storyboard */,
+				A82A5B0625E46596004811A5 /* NewsTableViewController.swift */,
+				A81F897625E1DD2A000A7CBD /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A82A5B1725E5E461004811A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A82A5B1825E5E46E004811A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		E3527FE84D42260614561C1C /* Frameworks */ = {
