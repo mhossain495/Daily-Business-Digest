@@ -12,7 +12,7 @@ struct Article: Codable {
     let articleDescription: String?
     let url: String?
     let urlToImage: String?
-    let publishedAt: Date
+    let publishedAt: Date?
     let content: String?
 
     // Map JSON keys to custom property names
