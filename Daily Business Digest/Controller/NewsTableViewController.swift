@@ -34,10 +34,10 @@ var newsArray = [Article]()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return newsArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
@@ -45,7 +45,7 @@ var newsArray = [Article]()
 
         return cell
     }
-    */
+    
 
   
 
@@ -81,16 +81,14 @@ var newsArray = [Article]()
 }
 
 
-
+// MARK: - JSON Parsing
 extension NewsTableViewController {
     func fetchNews() {
-
         AF.request("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4c58992a34d74bbb93825a7084b551cf", method: .get).validate().responseDecodable(of: News.self) { (response) in
-       
-            guard let NewsData = response.value else { return }
-            print(NewsData)
+            guard let newsData = response.value else { return }
+            self.newsArray = newsData.articles ?? []
+            self.tableView.reloadData()
         }
-        
     }
     
 }
