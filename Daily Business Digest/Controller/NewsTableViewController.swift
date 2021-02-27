@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Foundation
 
 class NewsTableViewController: UITableViewController {
         
@@ -22,7 +23,9 @@ class NewsTableViewController: UITableViewController {
     }
 
     
-
+var newsArray = [Article]()
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -81,8 +84,40 @@ class NewsTableViewController: UITableViewController {
 
 extension NewsTableViewController {
     func fetchNews() {
-        AF.request("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4c58992a34d74bbb93825a7084b551cf", method: .get).responseJSON { response in debugPrint(response)}
+
+        AF.request("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4c58992a34d74bbb93825a7084b551cf", method: .get).validate().responseDecodable(of: News.self) { (response) in
+       
+            guard let NewsData = response.value else { return }
+            print(NewsData)
+        }
+        
     }
     
-    
 }
+    
+    
+/*
+ 
+ extension NewsTableViewController {
+     func fetchNews() {
+         // let jsonDecoder = JSONDecoder()
+         
+         
+         AF.request("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4c58992a34d74bbb93825a7084b551cf", method: .get).validate().responseJSON { response in
+             
+             guard let data = response.data else { return }
+             
+             do {
+                 let decoder = JSONDecoder()
+                 let newsData = try decoder.decode(News.self, from: data)
+                 print(newsData)
+             } catch let error {
+                 print(error)
+                 
+             }
+         }
+     }
+     
+ }
+     
+ */

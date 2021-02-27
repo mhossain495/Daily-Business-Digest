@@ -7,9 +7,11 @@
 
 import Foundation
 
-
+// Data model for JSON
 struct News: Codable {
-    let articles: [Article]
+    let status: String?
+    let totalResults: Int?
+    let articles: [Article]?
 }
 
 

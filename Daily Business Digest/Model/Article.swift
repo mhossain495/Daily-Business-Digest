@@ -7,12 +7,13 @@
 
 import Foundation
 
+// Data model for JSON array
 struct Article: Codable {
     let title: String?
     let articleDescription: String?
     let url: String?
     let urlToImage: String?
-    let publishedAt: Date?
+    let publishedAt: String?
     let content: String?
 
     // Map JSON keys to custom property names
@@ -21,4 +22,6 @@ struct Article: Codable {
         case articleDescription = "description"
         case url, urlToImage, publishedAt, content
     }
+ 
+ 
 }
