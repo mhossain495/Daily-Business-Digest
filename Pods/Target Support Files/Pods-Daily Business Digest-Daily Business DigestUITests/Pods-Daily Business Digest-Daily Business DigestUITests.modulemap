@@ -1,0 +1,6 @@
+framework module Pods_Daily_Business_Digest_Daily_Business_DigestUITests {
+  umbrella header "Pods-Daily Business Digest-Daily Business DigestUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
