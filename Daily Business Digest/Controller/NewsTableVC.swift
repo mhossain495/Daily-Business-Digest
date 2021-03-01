@@ -2,28 +2,54 @@
 //  NewsTableViewController.swift
 //  Daily Business Digest
 //
-//  Created by shanaaz begum on 2/22/21.
+//  Created by shanaaz begum on 2/28/21.
 //
 
 import UIKit
-import Alamofire
 import Foundation
+import Alamofire
 
-class NewsTableViewController: UITableViewController {
-        
+class NewsTableVC: UITableViewController {
+    
+    var newsArray = [Article]()
+    let newsCell = "newsCell"
+    
+    // Create tableView object
+    //let NewsTableVC = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Add title to navigation bar
+        navigationItem.title = "News Feed"
+        
+        // Add NewsTableVC to current view controller
+        //view.addSubview(NewsTableVC)
+        
+        tableView.rowHeight = 100
+      
+        // Set delegates
+        //NewsTableVC.delegate = self
+        //NewsTableVC.dataSource = self
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // Register custom reusable cell
+        tableView.register(NewsCell.self, forCellReuseIdentifier: newsCell)
+
+        // Fetch news articles with API from newsapi.org with Alamofire
         fetchNews()
+       
     }
 
     
-var newsArray = [Article]()
+
     
     
     // MARK: - Table view data source
@@ -39,9 +65,10 @@ var newsArray = [Article]()
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: newsCell, for: indexPath)
 
         // Configure the cell...
+        cell.textLabel?.text = newsArray[indexPath.row].title
 
         return cell
     }
@@ -57,7 +84,7 @@ var newsArray = [Article]()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -82,7 +109,8 @@ var newsArray = [Article]()
 
 
 // MARK: - JSON Parsing
-extension NewsTableViewController {
+
+extension NewsTableVC {
     func fetchNews() {
         AF.request("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4c58992a34d74bbb93825a7084b551cf", method: .get).validate().responseDecodable(of: News.self) { (response) in
             guard let newsData = response.value else { return }
@@ -90,32 +118,5 @@ extension NewsTableViewController {
             self.tableView.reloadData()
         }
     }
-    
 }
     
-    
-/*
- 
- extension NewsTableViewController {
-     func fetchNews() {
-         // let jsonDecoder = JSONDecoder()
-         
-         
-         AF.request("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4c58992a34d74bbb93825a7084b551cf", method: .get).validate().responseJSON { response in
-             
-             guard let data = response.data else { return }
-             
-             do {
-                 let decoder = JSONDecoder()
-                 let newsData = try decoder.decode(News.self, from: data)
-                 print(newsData)
-             } catch let error {
-                 print(error)
-                 
-             }
-         }
-     }
-     
- }
-     
- */
