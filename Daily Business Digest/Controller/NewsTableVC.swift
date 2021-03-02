@@ -12,7 +12,7 @@ import Alamofire
 class NewsTableVC: UITableViewController {
     
     var newsArray = [Article]()
-    let newsCell = "newsCell"
+    let newsCellID = "newsCell"
     
     // Create tableView object
     //let NewsTableVC = UITableView()
@@ -41,7 +41,7 @@ class NewsTableVC: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         // Register custom reusable cell
-        tableView.register(NewsCell.self, forCellReuseIdentifier: newsCell)
+        tableView.register(NewsCell.self, forCellReuseIdentifier: newsCellID)
 
         // Fetch news articles with API from newsapi.org with Alamofire
         fetchNews()
@@ -65,11 +65,16 @@ class NewsTableVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: newsCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: newsCellID, for: indexPath) as! NewsCell
 
         // Configure the cell...
-        cell.textLabel?.text = newsArray[indexPath.row].title
-
+        //cell.textLabel?.text = newsArray[indexPath.row].title
+        let news = newsArray[indexPath.row]
+        cell.set(article: news)
+        cell.articleTitle.text = newsArray[indexPath.row].title
+        //cell.articleImage.image  = UIImage(systemName: "paperplane.fill")
+        
+        
         return cell
     }
     
