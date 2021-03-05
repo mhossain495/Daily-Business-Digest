@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class NewsCell: UITableViewCell {
     
@@ -25,9 +26,9 @@ class NewsCell: UITableViewCell {
         
         // Function call to configure appearance of the views
         configureTitleLabel()
-        //configureImageView()
+        configureImageView()
         setTitleConstraints()
-        //setImageConstraints()
+        setImageConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -36,8 +37,7 @@ class NewsCell: UITableViewCell {
     
     
     func set(article: Article) {
-        articleTitle.text = article.title
-        //articleImage.image = UIImage(systemName: "paperplane.fill")
+        //articleTitle.text = article.title
     }
     
     // Configure appearance of the image and text label objects
@@ -50,7 +50,7 @@ class NewsCell: UITableViewCell {
         articleTitle.numberOfLines = 0
         articleTitle.adjustsFontSizeToFitWidth = true
     }
-    /*
+    
     func setImageConstraints() {
         articleImage.translatesAutoresizingMaskIntoConstraints = false
         articleImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
@@ -58,7 +58,7 @@ class NewsCell: UITableViewCell {
         articleImage.heightAnchor.constraint(equalToConstant: 80).isActive = true
         articleImage.widthAnchor.constraint(equalTo: articleImage.heightAnchor, multiplier: 16/9).isActive = true
     }
-    */
+    
     
     // Set title label constraints
     func setTitleConstraints() {

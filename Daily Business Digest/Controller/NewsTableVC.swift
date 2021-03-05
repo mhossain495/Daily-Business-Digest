@@ -13,7 +13,8 @@ class NewsTableVC: UITableViewController {
     
     var newsArray = [Article]()
     let newsCellID = "newsCell"
-    
+  
+ 
     // Create tableView object
     //let NewsTableVC = UITableView()
     
@@ -68,12 +69,9 @@ class NewsTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: newsCellID, for: indexPath) as! NewsCell
 
         // Configure the cell...
-        //cell.textLabel?.text = newsArray[indexPath.row].title
-        let news = newsArray[indexPath.row]
-        cell.set(article: news)
-        cell.articleTitle.text = newsArray[indexPath.row].title
-        //cell.articleImage.image  = UIImage(systemName: "paperplane.fill")
-        
+        let newsIndexPath = newsArray[indexPath.row]
+        cell.articleTitle.text = newsIndexPath.title
+        cell.articleImage.loadImageFromUrl(urlString: newsIndexPath.urlToImage ?? "")
         
         return cell
     }
@@ -124,4 +122,33 @@ extension NewsTableVC {
         }
     }
 }
+
+
+let imageCache = NSCache<NSString, UIImage>()
+
+extension UIImageView {
     
+    func loadImageFromUrl(urlString: String)  {
+        
+        // Check cached image
+        if let imageFromCache = imageCache.object(forKey: urlString as NSString){
+            self.image = imageFromCache
+            return
+        }
+        // If image not from cache, then download image from url
+        AF.request(urlString, method: .get).response { (responseData) in
+            if let data = responseData.data {
+                DispatchQueue.main.async {
+                    if let imageToCache = UIImage(data: data) {
+                        imageCache.setObject(imageToCache, forKey: urlString as NSString)
+                        self.image = imageToCache
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+
