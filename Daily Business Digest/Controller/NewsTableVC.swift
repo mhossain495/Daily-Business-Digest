@@ -115,40 +115,10 @@ class NewsTableVC: UITableViewController {
 
 extension NewsTableVC {
     func fetchNews() {
-        AF.request("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4c58992a34d74bbb93825a7084b551cf", method: .get).validate().responseDecodable(of: News.self) { (response) in
+        AF.request("https://newsapi.org/v2/top-headlines?&country=us&category=business&apiKey=4c58992a34d74bbb93825a7084b551cf", method: .get).validate().responseDecodable(of: News.self) { (response) in
             guard let newsData = response.value else { return }
             self.newsArray = newsData.articles ?? []
             self.tableView.reloadData()
         }
     }
 }
-
-
-let imageCache = NSCache<NSString, UIImage>()
-
-extension UIImageView {
-    
-    func loadImageFromUrl(urlString: String)  {
-        
-        // Check cached image
-        if let imageFromCache = imageCache.object(forKey: urlString as NSString){
-            self.image = imageFromCache
-            return
-        }
-        // If image not from cache, then download image from url
-        AF.request(urlString, method: .get).response { (responseData) in
-            if let data = responseData.data {
-                DispatchQueue.main.async {
-                    if let imageToCache = UIImage(data: data) {
-                        imageCache.setObject(imageToCache, forKey: urlString as NSString)
-                        self.image = imageToCache
-                    }
-                }
-            }
-        }
-        
-    }
-}
-
-
-
