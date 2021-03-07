@@ -115,7 +115,7 @@ class NewsTableVC: UITableViewController {
 
 extension NewsTableVC {
     func fetchNews() {
-        AF.request("https://newsapi.org/v2/top-headlines?&country=us&category=business&apiKey=4c58992a34d74bbb93825a7084b551cf", method: .get).validate().responseDecodable(of: News.self) { (response) in
+        AF.request("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4c58992a34d74bbb93825a7084b551cf", method: .get).validate().responseDecodable(of: News.self) { (response) in
             guard let newsData = response.value else { return }
             self.newsArray = newsData.articles ?? []
             self.tableView.reloadData()
