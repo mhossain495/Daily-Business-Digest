@@ -76,6 +76,10 @@ class NewsTableVC: UITableViewController {
         return cell
     }
     
+    // Present article content when user taps table view cell
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(ArticleContentVC(), animated: true)
+    }
 
   
 
