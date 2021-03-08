@@ -13,27 +13,17 @@ class NewsTableVC: UITableViewController {
     
     var newsArray = [Article]()
     let newsCellID = "newsCell"
+    let articleContentVC = ArticleContentVC()
   
- 
-    // Create tableView object
-    //let NewsTableVC = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Add title to navigation bar
         navigationItem.title = "News Feed"
-        
-        // Add NewsTableVC to current view controller
-        //view.addSubview(NewsTableVC)
-        
         tableView.rowHeight = 100
       
-        // Set delegates
-        //NewsTableVC.delegate = self
-        //NewsTableVC.dataSource = self
-        
-        
+
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -49,15 +39,10 @@ class NewsTableVC: UITableViewController {
        
     }
 
-    
-
-    
-    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
-        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,43 +60,17 @@ class NewsTableVC: UITableViewController {
         
         return cell
     }
+   
     
-    // Present article content when user taps table view cell
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(ArticleContentVC(), animated: true)
-    }
-
-  
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
-    */
-
-   
-
-   
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // Present article description when user taps table view cell
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        articleContentVC.articleContentLabel.text = newsArray[indexPath.row].articleDescription
+        articleContentVC.articleTitleLabel.text = newsArray[indexPath.row].title
+        navigationController?.pushViewController(articleContentVC, animated: true)
     }
-    */
-    
 
-    
-    
 }
 
 

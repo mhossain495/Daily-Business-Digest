@@ -1,8 +1,8 @@
 //
-//  ArticleContent.swift
+//  ArticleContentVC.swift
 //  Daily Business Digest
 //
-//  Created by shanaaz begum on 3/6/21.
+//  Created by Mohammed Hossain on 3/6/21.
 //
 
 import Foundation
@@ -12,7 +12,9 @@ class ArticleContentVC: UIViewController {
     
     let scrollView = UIScrollView()
     let articleContentLabel = UILabel()
+    let articleTitleLabel = UILabel()
     let contentView = UIView()
+    
    
     override func viewDidLoad() {
         view.backgroundColor = .white
@@ -21,16 +23,18 @@ class ArticleContentVC: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         
-        // Add Subviews and configure layout constraints
+        // Add Subviews
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(articleContentLabel)
+        contentView.addSubview(articleTitleLabel)
         
+        // Configure layout constraints for Subviews and configure label properties
         setContentLabelConstraints()
         setScrollViewConstraints()
-        configureContentLabel()
         setContentViewConstraints()
-        
+        setArticleTitleConstraints()
+        configureLabels()
     }
 
     
@@ -39,21 +43,31 @@ class ArticleContentVC: UIViewController {
     }
     
     
-    func configureContentLabel() {
+    func configureLabels() {
         articleContentLabel.numberOfLines = 0
+        articleTitleLabel.numberOfLines = 0
         articleContentLabel.sizeToFit()
-        articleContentLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+        articleTitleLabel.sizeToFit()
+        articleTitleLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
     }
     
 
     
-    // Set content label constraints
+    // Set constraints for labels and views
     func setContentLabelConstraints() {
         articleContentLabel.translatesAutoresizingMaskIntoConstraints = false
         articleContentLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        articleContentLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        articleContentLabel.topAnchor.constraint(equalTo: articleTitleLabel.bottomAnchor,constant: 20).isActive = true
         articleContentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         articleContentLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
+    }
+    
+    func setArticleTitleConstraints() {
+        articleTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        articleTitleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        articleTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        //articleTitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        articleTitleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
     }
     
     func setScrollViewConstraints() {
