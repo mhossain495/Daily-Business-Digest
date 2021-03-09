@@ -2,7 +2,7 @@
 //  NewsTableViewController.swift
 //  Daily Business Digest
 //
-//  Created by shanaaz begum on 2/28/21.
+//  Created by Mohammed Hossain on 2/28/21.
 //
 
 import UIKit
@@ -21,22 +21,15 @@ class NewsTableVC: UITableViewController {
         
         // Add title to navigation bar
         navigationItem.title = "News Feed"
+        
+        // Adjust row height of table view cells
         tableView.rowHeight = 100
-        
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         // Register custom reusable cell
         tableView.register(NewsCell.self, forCellReuseIdentifier: newsCellID)
         
-        // Fetch news articles with API from newsapi.org with Alamofire
+        // Fetch news articles with API from newsapi.org using Alamofire
         fetchNews()
-        
     }
     
     // MARK: - Table view data source
@@ -60,24 +53,23 @@ class NewsTableVC: UITableViewController {
         return cell
     }
     
-    
     // MARK: - Navigation
     
-    // Present article description when user taps table view cell
+    // Present article properties when user taps cell
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        articleContentVC.articleContentLabel.text = newsArray[indexPath.row].articleDescription
         articleContentVC.articleTitleLabel.text = newsArray[indexPath.row].title
+        articleContentVC.articleContentLabel.text = newsArray[indexPath.row].articleDescription
+        
+        
         if let articleAuthor = newsArray[indexPath.row].author {
             articleContentVC.articleAuthorLabel.text = "By \(articleAuthor)"
         } else {
             articleContentVC.articleAuthorLabel.text = .none
         }
+        // Navigate to ArticleContentVC, which contains scroll view
         navigationController?.pushViewController(articleContentVC, animated: true)
     }
-    
-    
 }
-
 
 // MARK: - JSON Parsing
 
@@ -90,3 +82,5 @@ extension NewsTableVC {
         }
     }
 }
+
+

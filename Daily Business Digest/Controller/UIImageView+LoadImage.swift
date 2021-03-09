@@ -2,7 +2,7 @@
 //  UIImageView+LoadImage.swift
 //  Daily Business Digest
 //
-//  Created by shanaaz begum on 3/6/21.
+//  Created by Mohammed Hossain on 3/6/21.
 //
 
 import Foundation
