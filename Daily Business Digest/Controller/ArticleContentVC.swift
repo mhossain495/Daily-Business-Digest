@@ -13,6 +13,7 @@ class ArticleContentVC: UIViewController {
     let scrollView = UIScrollView()
     let articleContentLabel = UILabel()
     let articleTitleLabel = UILabel()
+    let articleAuthorLabel = UILabel()
     let contentView = UIView()
     
    
@@ -28,13 +29,16 @@ class ArticleContentVC: UIViewController {
         scrollView.addSubview(contentView)
         contentView.addSubview(articleContentLabel)
         contentView.addSubview(articleTitleLabel)
+        contentView.addSubview(articleAuthorLabel)
         
         // Configure layout constraints for Subviews and configure label properties
-        setContentLabelConstraints()
         setScrollViewConstraints()
         setContentViewConstraints()
+        setContentLabelConstraints()
         setArticleTitleConstraints()
         configureLabels()
+        setArticleAuthorLabelConstraints()
+        setArticleAuthorLabelConstraints()
     }
 
     
@@ -44,11 +48,16 @@ class ArticleContentVC: UIViewController {
     
     
     func configureLabels() {
-        articleContentLabel.numberOfLines = 0
         articleTitleLabel.numberOfLines = 0
-        articleContentLabel.sizeToFit()
+        articleContentLabel.numberOfLines = 0
+        articleAuthorLabel.numberOfLines = 0
+        
         articleTitleLabel.sizeToFit()
-        articleTitleLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
+        articleContentLabel.sizeToFit()
+        articleAuthorLabel.sizeToFit()
+    
+        articleTitleLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
+        articleAuthorLabel.font = UIFont.italicSystemFont(ofSize: 16.0)
     }
     
 
@@ -57,7 +66,7 @@ class ArticleContentVC: UIViewController {
     func setContentLabelConstraints() {
         articleContentLabel.translatesAutoresizingMaskIntoConstraints = false
         articleContentLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        articleContentLabel.topAnchor.constraint(equalTo: articleTitleLabel.bottomAnchor,constant: 20).isActive = true
+        articleContentLabel.topAnchor.constraint(equalTo: articleAuthorLabel.bottomAnchor, constant: 20).isActive = true
         articleContentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         articleContentLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
     }
@@ -66,8 +75,14 @@ class ArticleContentVC: UIViewController {
         articleTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         articleTitleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         articleTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        //articleTitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         articleTitleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
+    }
+    
+    func setArticleAuthorLabelConstraints() {
+        articleAuthorLabel.translatesAutoresizingMaskIntoConstraints = false
+        articleAuthorLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        articleAuthorLabel.topAnchor.constraint(equalTo: articleTitleLabel.bottomAnchor, constant: 20).isActive = true
+        articleAuthorLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
     }
     
     func setScrollViewConstraints() {
