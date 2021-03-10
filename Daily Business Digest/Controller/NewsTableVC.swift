@@ -14,6 +14,7 @@ class NewsTableVC: UITableViewController {
     var newsArray = [Article]()
     let newsCellID = "newsCell"
     let articleContentVC = ArticleContentVC()
+    let dateFormatter = DateFormatter()
     
     
     override func viewDidLoad() {
@@ -59,7 +60,7 @@ class NewsTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         articleContentVC.articleTitleLabel.text = newsArray[indexPath.row].title
         articleContentVC.articleContentLabel.text = newsArray[indexPath.row].articleDescription
-        
+        //articleContentVC.articleDateLabel.text = dateFormatter.formatDate(dateString: newsArray[indexPath.row].publishedAt ?? "")
         
         if let articleAuthor = newsArray[indexPath.row].author {
             articleContentVC.articleAuthorLabel.text = "By \(articleAuthor)"
@@ -82,5 +83,3 @@ extension NewsTableVC {
         }
     }
 }
-
-
