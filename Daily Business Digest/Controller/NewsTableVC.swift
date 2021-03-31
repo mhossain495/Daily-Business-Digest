@@ -17,6 +17,8 @@ class NewsTableVC: UITableViewController {
     let dateFormatter = DateFormatter()
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +32,19 @@ class NewsTableVC: UITableViewController {
         tableView.register(NewsCell.self, forCellReuseIdentifier: newsCellID)
         
         // Fetch news articles with API from newsapi.org using Alamofire
+        fetchNews()
+        
+        // Add refresh control
+        tableView.refreshControl = UIRefreshControl()
+        
+        // Add target and action to refresh data that is triggered when user pulls and releases table view
+        tableView.refreshControl?.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        
+    }
+    
+    // Function to fetch news data from API
+    @objc private func pullToRefresh() {
+        // Re-fetch news data
         fetchNews()
     }
     
@@ -54,6 +69,7 @@ class NewsTableVC: UITableViewController {
         return cell
     }
     
+
     // MARK: - Navigation
     
     // Present article properties when user taps cell
@@ -79,7 +95,9 @@ extension NewsTableVC {
         AF.request("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4c58992a34d74bbb93825a7084b551cf", method: .get).validate().responseDecodable(of: News.self) { (response) in
             guard let newsData = response.value else { return }
             self.newsArray = newsData.articles ?? []
+            self.tableView.refreshControl?.endRefreshing()
             self.tableView.reloadData()
         }
     }
 }
+
