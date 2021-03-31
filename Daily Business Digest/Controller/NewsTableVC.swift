@@ -40,6 +40,10 @@ class NewsTableVC: UITableViewController {
         // Add target and action to refresh data that is triggered when user pulls and releases table view
         tableView.refreshControl?.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         
+        // Add target and action to refresh data when app enters foreground after being in background
+        NotificationCenter.default.addObserver(self, selector: #selector(appEnteredForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+            // Do any additional setup after loading the view.
     }
     
     // Function to fetch news data from API
@@ -48,6 +52,10 @@ class NewsTableVC: UITableViewController {
         fetchNews()
     }
     
+    // Function to fetch news data from API when app enters foreground
+    @objc func appEnteredForeground() {
+        fetchNews()
+    }
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
